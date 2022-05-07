@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wordle clues</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="james" />
+<link rel="stylesheet" type="text/css" href="static/wordle.css" />
+<script type="text/javascript" src="static/wordle.js"></script>
+<script type="text/javascript" src="static/wordlist.js"></script>
+<body onload="updatewordlist();">
+<link rel="icon" type="image/ico" href="static/wordle.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Wordle clues</h1>
+
+<input id="inputbox" class="inputbox" maxlength="25" oninput="updatewordlist();">
+
+<div class="word">
+<span id="letter0" class="letter blank" onclick="cycleinfo(0);"></span>
+<span id="letter1" class="letter blank" onclick="cycleinfo(1);"></span>
+<span id="letter2" class="letter blank" onclick="cycleinfo(2);"></span>
+<span id="letter3" class="letter blank" onclick="cycleinfo(3);"></span>
+<span id="letter4" class="letter blank" onclick="cycleinfo(4);"></span>
+</div>
+
+<div class="word">
+<span id="letter5" class="letter blank" onclick="cycleinfo(5);"></span>
+<span id="letter6" class="letter blank" onclick="cycleinfo(6);"></span>
+<span id="letter7" class="letter blank" onclick="cycleinfo(7);"></span>
+<span id="letter8" class="letter blank" onclick="cycleinfo(8);"></span>
+<span id="letter9" class="letter blank" onclick="cycleinfo(9);"></span>
+</div>
+
+<div class="word">
+<span id="letter10" class="letter blank" onclick="cycleinfo(10);"></span>
+<span id="letter11" class="letter blank" onclick="cycleinfo(11);"></span>
+<span id="letter12" class="letter blank" onclick="cycleinfo(12);"></span>
+<span id="letter13" class="letter blank" onclick="cycleinfo(13);"></span>
+<span id="letter14" class="letter blank" onclick="cycleinfo(14);"></span>
+</div>
+
+<div class="word">
+<span id="letter15" class="letter blank" onclick="cycleinfo(15);"></span>
+<span id="letter16" class="letter blank" onclick="cycleinfo(16);"></span>
+<span id="letter17" class="letter blank" onclick="cycleinfo(17);"></span>
+<span id="letter18" class="letter blank" onclick="cycleinfo(18);"></span>
+<span id="letter19" class="letter blank" onclick="cycleinfo(19);"></span>
+</div>
+
+<div class="word">
+<span id="letter20" class="letter blank" onclick="cycleinfo(20);"></span>
+<span id="letter21" class="letter blank" onclick="cycleinfo(21);"></span>
+<span id="letter22" class="letter blank" onclick="cycleinfo(22);"></span>
+<span id="letter23" class="letter blank" onclick="cycleinfo(23);"></span>
+<span id="letter24" class="letter blank" onclick="cycleinfo(24);"></span>
+</div>
+
+<div id="outline-container-orgb24af48" class="outline-2">
+<h2 id="orgb24af48">Options</h2>
+<div class="outline-text-2" id="text-orgb24af48">
+<p>
+
+<div id="possiblewords" class="outputs">
+
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

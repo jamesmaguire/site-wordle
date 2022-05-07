@@ -1,0 +1,67 @@
+#+title: Wordle clues
+#+setupfile: static/page.setup
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="static/wordle.css" />
+#+HTML_HEAD: <script type="text/javascript" src="static/wordle.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="static/wordlist.js"></script>
+#+HTML_HEAD: <body onload="updatewordlist();">
+
+#+OPTIONS: toc:nil creator:nil timestamp:nil html-postamble:nil num:nil
+#+OPTIONS: html-style:nil
+#+HTML_HEAD: <link rel="icon" type="image/ico" href="static/wordle.svg" />
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+#+begin_export html
+
+<input id="inputbox" class="inputbox" maxlength="25" oninput="updatewordlist();">
+
+<div class="word">
+<span id="letter0" class="letter blank" onclick="cycleinfo(0);"></span>
+<span id="letter1" class="letter blank" onclick="cycleinfo(1);"></span>
+<span id="letter2" class="letter blank" onclick="cycleinfo(2);"></span>
+<span id="letter3" class="letter blank" onclick="cycleinfo(3);"></span>
+<span id="letter4" class="letter blank" onclick="cycleinfo(4);"></span>
+</div>
+
+<div class="word">
+<span id="letter5" class="letter blank" onclick="cycleinfo(5);"></span>
+<span id="letter6" class="letter blank" onclick="cycleinfo(6);"></span>
+<span id="letter7" class="letter blank" onclick="cycleinfo(7);"></span>
+<span id="letter8" class="letter blank" onclick="cycleinfo(8);"></span>
+<span id="letter9" class="letter blank" onclick="cycleinfo(9);"></span>
+</div>
+
+<div class="word">
+<span id="letter10" class="letter blank" onclick="cycleinfo(10);"></span>
+<span id="letter11" class="letter blank" onclick="cycleinfo(11);"></span>
+<span id="letter12" class="letter blank" onclick="cycleinfo(12);"></span>
+<span id="letter13" class="letter blank" onclick="cycleinfo(13);"></span>
+<span id="letter14" class="letter blank" onclick="cycleinfo(14);"></span>
+</div>
+
+<div class="word">
+<span id="letter15" class="letter blank" onclick="cycleinfo(15);"></span>
+<span id="letter16" class="letter blank" onclick="cycleinfo(16);"></span>
+<span id="letter17" class="letter blank" onclick="cycleinfo(17);"></span>
+<span id="letter18" class="letter blank" onclick="cycleinfo(18);"></span>
+<span id="letter19" class="letter blank" onclick="cycleinfo(19);"></span>
+</div>
+
+<div class="word">
+<span id="letter20" class="letter blank" onclick="cycleinfo(20);"></span>
+<span id="letter21" class="letter blank" onclick="cycleinfo(21);"></span>
+<span id="letter22" class="letter blank" onclick="cycleinfo(22);"></span>
+<span id="letter23" class="letter blank" onclick="cycleinfo(23);"></span>
+<span id="letter24" class="letter blank" onclick="cycleinfo(24);"></span>
+</div>
+
+#+end_export
+
+* Options
+@@html:
+<div id="possiblewords" class="outputs">
+@@
+
+* Export on save                                                   :noexport:
+;; Local Variables:
+;; eval: (add-hook 'after-save-hook 'org-html-export-to-html nil t)
+;; End:
