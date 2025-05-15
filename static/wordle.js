@@ -66,8 +66,39 @@ function updatewordlist () {
     }
 
     possiblewords.innerHTML = `<div class="candidate"> ${output.join('</div><div class="candidate">')} </div>`;
+    npossiblewords.innerHTML = `<div class="number"> (${output.length}) </div>`;
     updateclasses();
     return output;
+}
+
+function updateguesslist () {
+    const letters = new Set(inputbox.value.toUpperCase().split(""));
+    let output = guesslist.map(word => word.toUpperCase())
+        .filter(w => !hasRepeatedLetter(w))
+        .filter(w => !lettersPresent(w, letters));
+
+    guesssuggestions.innerHTML = `<div class="candidate"> ${output.join('</div><div class="candidate">')} </div>`;
+    nguesssuggestions.innerHTML = `<div class="number"> (${output.length}) </div>`;
+}
+
+function hasRepeatedLetter(word) {
+  const seenLetters = new Set();
+  for (const letter of word) {
+    if (seenLetters.has(letter)) {
+      return true;
+    }
+    seenLetters.add(letter);
+  }
+  return false;
+}
+
+function lettersPresent(word, letters) {
+    for (const wordletter of word) {
+        if (letters.has(wordletter)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function updateclasses () {

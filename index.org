@@ -3,6 +3,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="static/wordle.css" />
 #+HTML_HEAD: <script type="text/javascript" src="static/wordle.js"></script>
 #+HTML_HEAD: <script type="text/javascript" src="static/wordlist.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="static/guesslist.js"></script>
 #+HTML_HEAD: <body onload="updatewordlist();">
 
 #+OPTIONS: toc:nil creator:nil timestamp:nil html-postamble:nil num:nil
@@ -12,7 +13,7 @@
 
 #+begin_export html
 
-<input id="inputbox" class="inputbox" maxlength="25" oninput="updatewordlist();">
+<inpinputbox" class="inputbox" maxlength="25" oninput="updatewordlist();updateguesslist();">
 
 <div class="word">
 <span id="letter0" class="letter blank" onclick="cycleinfo(0);"></span>
@@ -56,9 +57,16 @@
 
 #+end_export
 
-* Options
+* Solutions
 @@html:
-<div id="possiblewords" class="outputs">
+<div id="npossiblewords" class="outputs"></div>
+<div id="possiblewords" class="outputs"></div>
+@@
+
+* Guess suggestions
+@@html:
+<div id="nguesssuggestions" class="outputs"></div>
+<div id="guesssuggestions" class="outputs"></div>
 @@
 
 * Export on save                                                   :noexport:

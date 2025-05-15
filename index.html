@@ -6,66 +6,27 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Wordle clues</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="james" />
+<meta name="author" content="James" />
+<meta name="generator" content="Org Mode" />
+<link rel="icon" type="image/ico" href="static/wordle.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="static/wordle.css" />
 <script type="text/javascript" src="static/wordle.js"></script>
 <script type="text/javascript" src="static/wordlist.js"></script>
+<script type="text/javascript" src="static/guesslist.js"></script>
 <body onload="updatewordlist();">
 <link rel="icon" type="image/ico" href="static/wordle.svg" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="content" class="content">
 <h1 class="title">Wordle clues</h1>
 
-<input id="inputbox" class="inputbox" maxlength="25" oninput="updatewordlist();">
+<inpinputbox" class="inputbox" maxlength="25" oninput="updatewordlist();updateguesslist();">
 
 <div class="word">
 <span id="letter0" class="letter blank" onclick="cycleinfo(0);"></span>
@@ -106,13 +67,24 @@ for the JavaScript code in this tag.
 <span id="letter23" class="letter blank" onclick="cycleinfo(23);"></span>
 <span id="letter24" class="letter blank" onclick="cycleinfo(24);"></span>
 </div>
-
-<div id="outline-container-orgb24af48" class="outline-2">
-<h2 id="orgb24af48">Options</h2>
-<div class="outline-text-2" id="text-orgb24af48">
+<div id="outline-container-orgd34439d" class="outline-2">
+<h2 id="orgd34439d">Solutions</h2>
+<div class="outline-text-2" id="text-orgd34439d">
 <p>
 
-<div id="possiblewords" class="outputs">
+<div id="npossiblewords" class="outputs"></div>
+<div id="possiblewords" class="outputs"></div>
+
+</p>
+</div>
+</div>
+<div id="outline-container-orgf747e6c" class="outline-2">
+<h2 id="orgf747e6c">Guess suggestions</h2>
+<div class="outline-text-2" id="text-orgf747e6c">
+<p>
+
+<div id="nguesssuggestions" class="outputs"></div>
+<div id="guesssuggestions" class="outputs"></div>
 
 </p>
 </div>

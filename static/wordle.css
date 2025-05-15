@@ -23,9 +23,11 @@ body {
 }
 
 #content {
-  width: 100ch;
+  width: 200ch;
   max-width: 100vw;
   margin: auto;
+  text-align: center;
+  margin-bottom: 10vh;
 }
 
 #org-div-home-and-up { display: none; }
@@ -39,11 +41,14 @@ body {
 }
 
 .outline-2 {
-  margin: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  max-width: 70ch;
-  width: 90%;
+  width: min(70ch,90%);
+  text-align: left;
+  padding: 0 2rem;
 }
 
 .outline-3 {
@@ -52,8 +57,9 @@ body {
 
 h2 {
   font-size: 140%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+  text-align: center;
 }
 
 h3 {
@@ -69,10 +75,10 @@ h3 {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1.5ch;
-  padding-left: 1ch;
-  padding-right: 1ch;
+  display: block;
+  margin: auto;
   margin-bottom: 2rem;
-  width: 100%;
+  width: min(100ch,100%);
   autocapitalize: characters;
 }
 
@@ -119,9 +125,14 @@ span {
   display: inline-block;
   width: 6ch;
   margin: 0.3rem;
-  margin-left: 1rem;
+  margin-left: 2ch;
 }
 
 .hidden {
   display: none;
+}
+
+.number {
+  font-weight: bold;
+  text-align: center;
 }
