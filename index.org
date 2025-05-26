@@ -13,7 +13,7 @@
 
 #+begin_export html
 
-<input id="inputbox" class="inputbox" maxlength="25" oninput="updatewordlist();updateguesslist();">
+<input id="inputbox" class="inputbox" maxlength="25" oninput="updatewordlist();">
 
 <div class="word">
 <span id="letter0" class="letter blank" onclick="cycleinfo(0);"></span>

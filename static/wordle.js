@@ -68,14 +68,21 @@ function updatewordlist () {
     possiblewords.innerHTML = `<div class="candidate"> ${output.join('</div><div class="candidate">')} </div>`;
     npossiblewords.innerHTML = `<div class="number"> (${output.length}) </div>`;
     updateclasses();
+    updateguesslist();
     return output;
 }
 
 function updateguesslist () {
     const letters = new Set(inputbox.value.toUpperCase().split(""));
+    const possiblewordletters = new Set(possiblewords.textContent.toUpperCase().split(""));
+    console.log(letters);
+    console.log(possiblewordletters);
     let output = guesslist.map(word => word.toUpperCase())
         .filter(w => !hasRepeatedLetter(w))
-        .filter(w => !lettersPresent(w, letters));
+      // This option gives all words that can be made up using remaining letters of the alphabet
+        // .filter(w => !lettersPresent(w, letters));
+      // This option gives all words that are combinations of the remaining solution words
+        .filter(w => containsOnly(w, possiblewordletters));
 
     guesssuggestions.innerHTML = `<div class="candidate"> ${output.join('</div><div class="candidate">')} </div>`;
     nguesssuggestions.innerHTML = `<div class="number"> (${output.length}) </div>`;
@@ -99,6 +106,15 @@ function lettersPresent(word, letters) {
         }
     }
     return false;
+}
+
+function containsOnly(word, letters) {
+    for (const wordletter of word) {
+        if (!letters.has(wordletter)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function updateclasses () {
