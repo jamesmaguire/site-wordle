@@ -77,11 +77,13 @@ function updateguesslist () {
     const possiblewordletters = new Set(possiblewords.textContent.toUpperCase().split(""));
     console.log(letters);
     console.log(possiblewordletters);
+    // This option gives all words that can be made up using remaining letters of the alphabet
+    // let output = guesslist.map(word => word.toUpperCase())
+    //     .filter(w => !hasRepeatedLetter(w))
+    //     .filter(w => !lettersPresent(w, letters));
+    // This option gives all words that are combinations of the remaining solution words
     let output = guesslist.map(word => word.toUpperCase())
         .filter(w => !hasRepeatedLetter(w))
-      // This option gives all words that can be made up using remaining letters of the alphabet
-        // .filter(w => !lettersPresent(w, letters));
-      // This option gives all words that are combinations of the remaining solution words
         .filter(w => containsOnly(w, possiblewordletters));
 
     guesssuggestions.innerHTML = `<div class="candidate"> ${output.join('</div><div class="candidate">')} </div>`;
