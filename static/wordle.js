@@ -84,6 +84,7 @@ function updateguesslist () {
     // This option gives all words that are combinations of the remaining solution words
     let output = guesslist.map(word => word.toUpperCase())
         .filter(w => !hasRepeatedLetter(w))
+        .filter(w => !lettersPresent(w, letters))
         .filter(w => containsOnly(w, possiblewordletters));
 
     guesssuggestions.innerHTML = `<div class="candidate"> ${output.join('</div><div class="candidate">')} </div>`;
