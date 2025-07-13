@@ -75,8 +75,6 @@ function updatewordlist () {
 function updateguesslist () {
     const letters = new Set(inputbox.value.toUpperCase().split(""));
     const possiblewordletters = new Set(possiblewords.textContent.toUpperCase().split(""));
-    console.log(letters);
-    console.log(possiblewordletters);
     // This option gives all words that can be made up using remaining letters of the alphabet
     // let output = guesslist.map(word => word.toUpperCase())
     //     .filter(w => !hasRepeatedLetter(w))
@@ -86,9 +84,22 @@ function updateguesslist () {
         .filter(w => !hasRepeatedLetter(w))
         .filter(w => !lettersPresent(w, letters))
         .filter(w => containsOnly(w, possiblewordletters));
+    output = sortbyletterfrequency(output);
 
     guesssuggestions.innerHTML = `<div class="candidate"> ${output.join('</div><div class="candidate">')} </div>`;
     nguesssuggestions.innerHTML = `<div class="number"> (${output.length}) </div>`;
+}
+
+function sortbyletterfrequency (guesses) {
+    const freq = {};
+    for (const char of possiblewords.textContent) {
+        freq[char] = (freq[char] || 0) + 1;
+    }
+    const score = word => word.split("").map(letter => freq[letter]).reduce((a,b) => a+b);
+    return guesses.sort((a,b) => score(b)-score(a));
+}
+
+function freqscore(word, freqs) {
 }
 
 function hasRepeatedLetter(word) {
